@@ -99,7 +99,7 @@ const products = [
         name:"Red bull",
         price:6330,
         piecesPerBox:24,
-        image:"images/redbull.webp"
+        image:"images/redbull1.webp"
     },
     {
         id:14,
