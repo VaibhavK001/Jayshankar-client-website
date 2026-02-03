@@ -53,6 +53,35 @@
   background: #fff;
 }
 
+
+
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-socials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
 /* 🔥 Mobile Styles */
 @media (max-width: 768px) {
   .logo {
@@ -108,9 +137,16 @@
   text-align: center;
   margin: 25px auto;
 }
-
-
-
+.footer-branding{
+  font-size: 10px;
+}
+.footer-copyright{
+  font-size: 10px;
+  margin: 0 auto;
+}
+#owner{
+  margin: 2px;
+}
 .product-card {
   border: 1px solid #000000;
   padding: 15px;
@@ -128,9 +164,30 @@
 }
 
 
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
 
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
+.footer-socials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 }
 
 
@@ -180,8 +237,6 @@ button {
 
 
 
-
-
 .footer-container{
   background-color: #000000;
   color: white;
@@ -189,6 +244,9 @@ button {
   margin:0 auto;
   padding: 25px 20px;
 }
-.footer-copyright{
+.footer-copyright .footer-branding{
   font-size: small;
+}
+.footer-branding{
+  margin-top: 5px;
 }
