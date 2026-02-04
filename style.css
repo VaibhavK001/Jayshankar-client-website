@@ -53,9 +53,62 @@
   background: #fff;
 }
 
+#main h1{
+  font-size: 25px;
+  text-align: center;
+  margin: 25px auto;
+}
 
 
+body {
+  font-family: Arial, sans-serif;
+}
 
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 8px;
+}
+
+.product-card {
+  border: 1px solid #000000;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+button {
+  background: #e60000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.footer-container{
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  margin:0 auto;
+  padding: 25px 20px;
+}
+.footer-copyright{
+  font-size: 13px;
+}
+.footer-branding{
+  margin-top: 5px;
+  font-size: 11px;
+}
 .social-icons {
   display: flex;
   gap: 15px;
@@ -79,6 +132,12 @@
   align-items: center;
   gap: 20px;
 }
+
+
+
+
+
+
 
 
 
@@ -125,12 +184,11 @@
   opacity: 0;
 }
 
-
-
 /* Smooth animation */
 .hamburger span {
   transition: all 0.3s ease;
 }
+
 
 #main h1{
   font-size: 25px;
@@ -190,63 +248,3 @@
 }
 }
 
-
-#main h1{
-  font-size: 25px;
-  text-align: center;
-  margin: 25px auto;
-}
-
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 8px;
-}
-
-.product-card {
-  border: 1px solid #000000;
-  padding: 15px;
-  text-align: center;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.product-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-}
-
-button {
-  background: #e60000;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-
-
-
-.footer-container{
-  background-color: #000000;
-  color: white;
-  text-align: center;
-  margin:0 auto;
-  padding: 25px 20px;
-}
-.footer-copyright .footer-branding{
-  font-size: small;
-}
-.footer-branding{
-  margin-top: 5px;
-}
