@@ -144,7 +144,7 @@ button {
 /* 🔥 Mobile Styles */
 @media (max-width: 768px) {
   .logo {
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .hamburger {
@@ -168,8 +168,17 @@ button {
     display: flex;
   }
   .navbar{
-    padding: 15px 20px;
+    padding: 15px 10px;
   }
+
+  /* Cart button */
+.cart-btn{
+    padding: 7px;
+}
+
+
+
+
   /* Cross animation */
 .hamburger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);

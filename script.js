@@ -5,6 +5,11 @@ function toggleMenu() {
   document.querySelector(".hamburger").classList.toggle("open");
 }
 
+//cart btn redirection
+let cartButton = document.querySelector(".cart-btn")
+cartButton.addEventListener("click", function cartPage(){
+    window.location.href = "cart.html";
+})
 
 
 
@@ -142,7 +147,45 @@ products.forEach(product=>{
     productList.appendChild(card);
 });
 
-//notification after product added to cart
-function addToCart(productId){
-    alert("Product added: " + productId);
-}
+
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+
+      const existingItem = cart.find(item => item.id === productId);
+
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          qty: 1,
+          img: product.image
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
+    }
+
+    /* =========================
+       CART BADGE UPDATE
+    ========================== */
+    function updateCartBadge() {
+      const badge = document.getElementById("cartBadge");
+
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+      if (totalQty > 0) {
+        badge.style.display = "inline-block";
+        badge.textContent = totalQty;
+      } else {
+        badge.style.display = "none";
+      }
+    }
+
+    updateCartBadge(); // run on page load

@@ -19,11 +19,17 @@
     <nav class="navbar">
       <div class="logo">Jayshankar Traders</div>
 
+      <button class="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+
       <ul class="nav-links" id="navLinks">
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
+
       <!-- Hamburger -->
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -51,8 +57,11 @@
           <br />
           <div class="footer-copyright">
             <p>&copy; 2026 Jayshankar Traders. All rights reserved.</p>
-             <p id="owner">Owned & Operated by <strong>Angad Deshmukh.</strong></p>
-          </div><br>
+            <p id="owner">
+              Owned & Operated by <strong>Angad Deshmukh.</strong>
+            </p>
+          </div>
+          <br />
           <div class="footer-branding">
             <p>Website developed and managed by PersonaBuild Studio.</p>
           </div>
