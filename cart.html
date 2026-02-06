@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <title>Cart</title>
     <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   </head>
   <body>
-    <h2>Your Cart</h2>
+    <nav class="cart-navbar">
+      <button class="back-btn" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+       <h2>Your Cart</h2>
+    </nav>
+       
 
-    <div class="cart-container">
-      <!-- Cart Items -->
+    
       <div id="cart-items"></div>
-      <!-- Summary -->
-    </div>
+    
     <div id="cart-summary">
         <h3>Order Summary</h3>
         <div id="summary-list"></div>

@@ -34,15 +34,12 @@ function renderCart() {
         <div class="cart-description">
           <h4>${item.name}</h4>
           <p>Price: ₹${item.price}</p>
-
           <div class="qty-controls">
            <button onclick="decreaseQty(${item.id})">−</button>
            <span>${item.qty}</span>
            <button onclick="increaseQty(${item.id})">+</button>
           </div>
-
           <p>Item Total: ₹${itemTotal}</p>
-
           <button class="remove-btn" onclick="removeItem(${item.id})">
             Remove
           </button>
