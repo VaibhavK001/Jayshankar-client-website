@@ -14,50 +14,50 @@ function renderCart() {
   if (cart.length === 0) {
     cartItemsEl.innerHTML = "<p>Your cart is empty.</p>";
     finalTotalEl.textContent = "0";
-    return;
+  } else {
+    let finalTotal = 0;
+
+    cart.forEach((item) => {
+      const itemTotal = item.price * item.qty;
+      finalTotal += itemTotal;
+
+      /* Cart Items UI */
+      cartItemsEl.innerHTML += `
+
+
+        <div class="cart-item">
+          <div class="cart-img">
+             <img src="${item.img}">
+          </div>
+          <div class="cart-description">
+            <h4>${item.name}</h4>
+            <p>Price: ₹${item.price}</p>
+            <div class="qty-controls">
+             <button onclick="decreaseQty(${item.id})">−</button>
+             <span>${item.qty}</span>
+             <button onclick="increaseQty(${item.id})">+</button>
+            </div>
+            <p>Item Total: ₹${itemTotal}</p>
+            <button class="remove-btn" onclick="removeItem(${item.id})">
+              Remove
+            </button>
+          </div>
+        </div>
+
+      `;
+
+      /* Summary UI */
+      summaryListEl.innerHTML += `
+        <div class="summary-row">
+          <span>${item.name} × ${item.qty}</span>
+          <span>₹${itemTotal}</span>
+        </div>
+      `;
+    });
+
+    finalTotalEl.textContent = finalTotal;
   }
 
-  let finalTotal = 0;
-
-  cart.forEach((item) => {
-    const itemTotal = item.price * item.qty;
-    finalTotal += itemTotal;
-
-    /* Cart Items UI */
-    cartItemsEl.innerHTML += `
-   
-      
-      <div class="cart-item">
-        <div class="cart-img">
-           <img src="${item.img}">
-        </div>
-        <div class="cart-description">
-          <h4>${item.name}</h4>
-          <p>Price: ₹${item.price}</p>
-          <div class="qty-controls">
-           <button onclick="decreaseQty(${item.id})">−</button>
-           <span>${item.qty}</span>
-           <button onclick="increaseQty(${item.id})">+</button>
-          </div>
-          <p>Item Total: ₹${itemTotal}</p>
-          <button class="remove-btn" onclick="removeItem(${item.id})">
-            Remove
-          </button>
-        </div>
-      </div>
-    
-    `;
-
-    /* Summary UI */
-    summaryListEl.innerHTML += `
-      <div class="summary-row">
-        <span>${item.name} × ${item.qty}</span>
-        <span>₹${itemTotal}</span>
-      </div>
-    `;
-  });
-
-  finalTotalEl.textContent = finalTotal;
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 

@@ -4,12 +4,27 @@
   box-sizing: border-box;
 }
 .cart-navbar{
-  background-color: orangered;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  background: orangered;
+  position: sticky;
+  top: 0;
+}
+.cart-navbar button{
+   background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px;
+
 }
 h2{
-  text-align: center;
-  padding: 5px;
+    margin: 0;
   color: white;
+  font-size: 28px;
 }
 #cart-items{
   padding: 6px;
@@ -42,7 +57,17 @@ h2{
   align-items:flex-start;
   gap: 10px;
 }
-
+.remove-btn{
+  border: none;
+  background-color: orangered;
+  color: white;
+  padding: 6px 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.qty-controls button{
+  padding: 3px 10px;
+}
 
 
 
