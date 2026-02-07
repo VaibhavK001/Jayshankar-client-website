@@ -152,40 +152,41 @@ products.forEach(product=>{
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   function addToCart(productId) {
-      const product = products.find(p => p.id === productId);
 
-      const existingItem = cart.find(item => item.id === productId);
+  // ALWAYS reload latest cart
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      if (existingItem) {
-        existingItem.qty += 1;
-      } else {
-        cart.push({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          qty: 1,
-          img: product.image
-        });
-      }
+  const product = products.find(p => p.id === productId);
+  const existingItem = cart.find(item => item.id === productId);
 
-      localStorage.setItem("cart", JSON.stringify(cart));
-      updateCartBadge();
-    }
+  if (existingItem) {
+    existingItem.qty += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      qty: 1,
+      img: product.image
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartBadge();
+  }
 
     /* =========================
        CART BADGE UPDATE
     ========================== */
     function updateCartBadge() {
-      const badge = document.getElementById("cartBadge");
 
-      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const badge = document.getElementById("cartBadge");
 
-      if (totalQty > 0) {
-        badge.style.display = "inline-block";
-        badge.textContent = totalQty;
-      } else {
-        badge.style.display = "none";
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  badge.style.display = totalQty ? "inline-block" : "none";
+  badge.textContent = totalQty;
       }
-    }
 
     updateCartBadge(); // run on page load
