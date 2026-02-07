@@ -4,6 +4,12 @@ const cartItemsEl = document.getElementById("cart-items");
 const summaryListEl = document.getElementById("summary-list");
 const finalTotalEl = document.getElementById("finalTotal");
 
+function goBack(){
+  window.location.href ="index.html"
+  updateCartBadge();
+}
+
+
 /* =========================
    RENDER CART
 ========================= */
